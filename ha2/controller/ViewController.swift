@@ -43,7 +43,9 @@ class ViewController: UIViewController {
            Auth.auth().signIn(withEmail: txt_email.text!, password: txt_pass.text!) { [weak self] user, error in
             if(error == nil)
             {
-                print(".......dang nhap thanh cong ............")
+//                print("....... dang nhap thanh cong ............")
+                self!.goto_MH_trangchu_saudangnhap()
+                User_flag = 1
             }
             else
             {
@@ -68,6 +70,11 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(scr!, animated: true)
     }
     
+     func goto_MH_trangchu_saudangnhap()
+    {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_chucnang")
+        navigationController?.pushViewController(scr!, animated: true)
+    }
 
 }
 

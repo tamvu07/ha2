@@ -14,6 +14,12 @@
 		1845AE6B225EE0A0004C0B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1845AE6A225EE0A0004C0B8E /* Assets.xcassets */; };
 		1845AE6E225EE0A0004C0B8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1845AE6C225EE0A0004C0B8E /* LaunchScreen.storyboard */; };
 		1845AE7A225EE259004C0B8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1845AE79225EE259004C0B8E /* GoogleService-Info.plist */; };
+		18A516AE226030BD0003F2E8 /* TrangChu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */; };
+		18DEF3812260B7470058DB80 /* MH_Trang_Chu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DEF3802260B7470058DB80 /* MH_Trang_Chu_ViewController.swift */; };
+		18DEF3832260CC400058DB80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DEF3822260CC400058DB80 /* User.swift */; };
+		18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCDE35226090A8008A8552 /* SWRevealViewController.m */; };
+		18FCDE382260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCDE372260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift */; };
+		18FD89532261722F000353B7 /* extension_function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD89522261722F000353B7 /* extension_function.swift */; };
 		76E2FEADA460050A2AA59CAE /* Pods_ha2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEB36F19B8F0D43FDCD8CFE /* Pods_ha2.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +33,14 @@
 		1845AE6D225EE0A0004C0B8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1845AE6F225EE0A0004C0B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1845AE79225EE259004C0B8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrangChu_ViewController.swift; sourceTree = "<group>"; };
+		18DEF3802260B7470058DB80 /* MH_Trang_Chu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Trang_Chu_ViewController.swift; sourceTree = "<group>"; };
+		18DEF3822260CC400058DB80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18FCDE33226090A7008A8552 /* ha2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ha2-Bridging-Header.h"; sourceTree = "<group>"; };
+		18FCDE34226090A8008A8552 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		18FCDE35226090A8008A8552 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		18FCDE372260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Chuyen_Menu_ViewController.swift; sourceTree = "<group>"; };
+		18FD89522261722F000353B7 /* extension_function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_function.swift; sourceTree = "<group>"; };
 		D40651FF7D2300FB378853DD /* Pods-ha2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ha2.release.xcconfig"; path = "Target Support Files/Pods-ha2/Pods-ha2.release.xcconfig"; sourceTree = "<group>"; };
 		DEEB36F19B8F0D43FDCD8CFE /* Pods_ha2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ha2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32F48454D05309DF68C5E21 /* Pods-ha2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ha2.debug.xcconfig"; path = "Target Support Files/Pods-ha2/Pods-ha2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,8 +93,11 @@
 		1845AE75225EE210004C0B8E /* support */ = {
 			isa = PBXGroup;
 			children = (
+				18FCDE34226090A8008A8552 /* SWRevealViewController.h */,
+				18FCDE35226090A8008A8552 /* SWRevealViewController.m */,
 				1845AE6A225EE0A0004C0B8E /* Assets.xcassets */,
 				1845AE79225EE259004C0B8E /* GoogleService-Info.plist */,
+				18FCDE33226090A7008A8552 /* ha2-Bridging-Header.h */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -91,6 +108,9 @@
 				1845AE63225EE09E004C0B8E /* AppDelegate.swift */,
 				1845AE65225EE09E004C0B8E /* ViewController.swift */,
 				18219F50225F5229006F2A0D /* DangKy_ViewController.swift */,
+				18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */,
+				18FCDE372260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift */,
+				18DEF3802260B7470058DB80 /* MH_Trang_Chu_ViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -105,6 +125,8 @@
 		1845AE78225EE23C004C0B8E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				18DEF3822260CC400058DB80 /* User.swift */,
+				18FD89522261722F000353B7 /* extension_function.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -160,6 +182,7 @@
 				TargetAttributes = {
 					1845AE5F225EE09E004C0B8E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -253,9 +276,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FCDE382260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift in Sources */,
 				18219F51225F5229006F2A0D /* DangKy_ViewController.swift in Sources */,
 				1845AE66225EE09E004C0B8E /* ViewController.swift in Sources */,
+				18DEF3812260B7470058DB80 /* MH_Trang_Chu_ViewController.swift in Sources */,
+				18DEF3832260CC400058DB80 /* User.swift in Sources */,
+				18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */,
+				18A516AE226030BD0003F2E8 /* TrangChu_ViewController.swift in Sources */,
 				1845AE64225EE09E004C0B8E /* AppDelegate.swift in Sources */,
+				18FD89532261722F000353B7 /* extension_function.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +431,7 @@
 			baseConfigurationReference = E32F48454D05309DF68C5E21 /* Pods-ha2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ha2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,6 +440,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ha2.ha2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ha2/support/ha2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,6 +452,7 @@
 			baseConfigurationReference = D40651FF7D2300FB378853DD /* Pods-ha2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ha2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,6 +461,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ha2.ha2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ha2/support/ha2-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
