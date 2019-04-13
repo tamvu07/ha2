@@ -12,31 +12,14 @@ import Firebase
 
 class chucnang{
     
-    func kiemtradangnhap() -> Int
-    {
-        var a = 2
-        // kiem tra nguoi dung dang nhap chua ?
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            if user != nil
-            {
-                // da dang nhap
-                print("......\(user?.email).........")
-                a = 1
-            }
-            else
-            {
-//                print("chua dang nhap !..........")
-                a = 0
-            }
-        }
-        return a
-    }
-    
     // dang xuat tai khoan hien tai
     func dangxuat()  {
         let firebaseAuth = Auth.auth()
         do {
-            try firebaseAuth.signOut()
+            try
+                firebaseAuth.signOut()
+                User_flag = 0
+            
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }

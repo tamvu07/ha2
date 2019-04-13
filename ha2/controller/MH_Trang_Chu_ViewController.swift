@@ -9,6 +9,7 @@
 import UIKit
 var vistor:User!
 var User_flag:Int!
+var User_name:String!
 
 class MH_Trang_Chu_ViewController: UIViewController {
 

@@ -44,8 +44,9 @@ class ViewController: UIViewController {
             if(error == nil)
             {
 //                print("....... dang nhap thanh cong ............")
-                self!.goto_MH_trangchu_saudangnhap()
-                User_flag = 1
+                 User_flag = 1
+                User_name = self!.txt_email.text
+                self!.goto_MH_chucnang()
             }
             else
             {
@@ -70,7 +71,7 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(scr!, animated: true)
     }
     
-     func goto_MH_trangchu_saudangnhap()
+     func goto_MH_chucnang()
     {
         let scr = storyboard?.instantiateViewController(withIdentifier: "MH_chucnang")
         navigationController?.pushViewController(scr!, animated: true)

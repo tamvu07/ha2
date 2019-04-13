@@ -22,7 +22,6 @@ class DangKy_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     
@@ -48,24 +47,10 @@ class DangKy_ViewController: UIViewController {
                 Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
                     if(error == nil)
                     {
-                        let alert = UIAlertController(title: "Thông Báo", message: "Đăng ký thành công", preferredStyle: .alert)
-                        let bt_ok:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                        alert.addAction(bt_ok)
-                        self.present(alert, animated: true, completion: nil)
-                        
-                        
+                        User_name = email
+                        self.goto_MH_chucnang()
                     }
-                    
                 }
-//                        // cah de luu ten firebase
-//                        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-//                        changeRequest?.commitChanges { (error) in
-//                            if let error = error{
-//                                print("loi upload profile")
-//                            }else{
-//                                //                                print("dang ky thanh cong ...... chuyen trang ! ")
-//                            }
-//                        }
             }
             else
             {
@@ -78,6 +63,12 @@ class DangKy_ViewController: UIViewController {
       }
     }
     
+    func goto_MH_chucnang()
+    {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_chucnang")
+        navigationController?.pushViewController(scr!, animated: true)
+    }
+
 
 
 }

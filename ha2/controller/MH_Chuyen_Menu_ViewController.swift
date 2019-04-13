@@ -32,10 +32,18 @@ class MH_Chuyen_Menu_ViewController:  UIViewController, UITableViewDataSource,UI
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table_menu.dequeueReusableCell(withIdentifier: arrCell[indexPath.row], for: indexPath)
-//        cell.textLabel?.text = arrCell[indexPath.row]
         if(arrCell[indexPath.row] == "one")
         {
-             cell.textLabel?.text = "Đăng Nhập"
+            if(User_flag == 1)
+            {
+                cell.textLabel?.text = "Đăng Xuất"
+                cell.detailTextLabel?.text = User_name
+            }else if(User_flag != 1)
+            {
+                cell.textLabel?.text = "Đăng Nhập"
+                cell.detailTextLabel?.text = ". . ."
+            }
+            
         }
         else if(arrCell[indexPath.row] == "two")
         {
@@ -45,37 +53,22 @@ class MH_Chuyen_Menu_ViewController:  UIViewController, UITableViewDataSource,UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row == 0)
+        {
+            // kiem tra nguoi dung dang nhap chua ?
+            if(User_flag == 1)
+            {
+               // dang xuat
+                f.dangxuat()
+                self.goto_MH_trangchu()
+            }
+            else if(User_flag != 1)
+            {
+                self.goto_MH_dangnhap()
+            }
+        }
         if(indexPath.row == 1)
         {
-//            var a = 0
-//            // khi bam vao thi xoay xoay
-////            let alertActivity:UIAlertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
-////            let activity:UIActivityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
-////            activity.frame = CGRect(x: (view.frame.size.width/2), y: 10, width: 0, height: 0)
-////            activity.color = UIColor.red
-////            alertActivity.view.addSubview(activity)
-////            activity.startAnimating()
-////            self.present(alertActivity, animated: true, completion: nil)
-//            a = f.kiemtradangnhap()
-//
-//            if(a == 1)
-//            {
-////                // tat xoay xoay
-////                activity.stopAnimating()
-////                alertActivity.dismiss(animated: true, completion: nil)
-//                // dang nhap thanh cong se chuyen man hinh
-//                print(",,,,,,,,,\(a)>>>>>>>>>>")
-//               self.goto_MH_hosocuatoi()
-//
-//            }else if(a == 0) {
-////                // tat xoay xoay
-////                activity.stopAnimating()
-////                alertActivity.dismiss(animated: true, completion: nil)
-//               // chua dang nhap
-//                 print(",,,,,,,,,\(a)>,,,,,,,,,,,,,,,,,>>>>>>>>>")
-//                self.goto_MH_dangnhap()
-//            }
-            
             // kiem tra nguoi dung dang nhap chua ?
             if(User_flag == 1)
             {
@@ -99,6 +92,12 @@ class MH_Chuyen_Menu_ViewController:  UIViewController, UITableViewDataSource,UI
     {
         let scr = storyboard?.instantiateViewController(withIdentifier: "MH_dangnhap")
         navigationController?.pushViewController(scr!, animated: true)
+    }
+    
+    func goto_MH_trangchu()
+    {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_trangchu")
+        self.present(scr!, animated: true, completion: nil)
     }
     
 }
