@@ -63,9 +63,10 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
                 let congty:CongTy =  CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi)
                 self.array_congty.append(congty)
                 print("........>>>>>>>>>>>>\(self.array_congty.count).................")
+                 self.tb_List_CongTy.reloadData()
             }
         })
-        self.tb_List_CongTy.reloadData()
+       
         
     }
 
@@ -75,18 +76,26 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("............\(array_congty.count)......................")
-       return 2
+//        print("............\(array_congty.count)......................")
+       return array_congty.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tb_List_CongTy.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CELLS_Trang_Chu_TableViewCell
 
-//        cell.lb2.text = array_congty[indexPath.row].diachi
-//        cell.lb3.text = array_congty[indexPath.row].congviec
-       
+        cell.lb1.text = array_congty[indexPath.row].tencongty
+        cell.lb2.text = array_congty[indexPath.row].diachi
+        cell.lb3.text = array_congty[indexPath.row].congviec
+        
+        let url:URL = URL(string: "https://www.aeonmall-vietnam.com/wp-content/uploads/2017/01/IMG_0629-2.jpg")!
+        
+       cell.Avatar.image = UIImage(data: data)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
 }
