@@ -29,3 +29,17 @@ class chucnang{
 
     
 }
+
+//// lay ra user hien tai
+//let user = Auth.auth().currentUser
+//if let user = user {
+//    let uid = user.uid
+//    let email = user.email
+//    // user hien tai ne
+//    currenUser = User(id: uid, email: email!)
+//
+//}
+//else
+//{
+//    print("khong co user !.............")
+//}

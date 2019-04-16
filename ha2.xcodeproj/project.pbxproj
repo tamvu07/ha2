@@ -17,6 +17,8 @@
 		18A516AE226030BD0003F2E8 /* TrangChu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */; };
 		18DEF3812260B7470058DB80 /* MH_Trang_Chu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DEF3802260B7470058DB80 /* MH_Trang_Chu_ViewController.swift */; };
 		18DEF3832260CC400058DB80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DEF3822260CC400058DB80 /* User.swift */; };
+		18E2A2FE22620018007638F6 /* CongTy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E2A2FD22620018007638F6 /* CongTy.swift */; };
+		18E2A30022620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E2A2FF22620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift */; };
 		18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCDE35226090A8008A8552 /* SWRevealViewController.m */; };
 		18FCDE382260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCDE372260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift */; };
 		18FD89532261722F000353B7 /* extension_function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD89522261722F000353B7 /* extension_function.swift */; };
@@ -36,6 +38,8 @@
 		18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrangChu_ViewController.swift; sourceTree = "<group>"; };
 		18DEF3802260B7470058DB80 /* MH_Trang_Chu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_Trang_Chu_ViewController.swift; sourceTree = "<group>"; };
 		18DEF3822260CC400058DB80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18E2A2FD22620018007638F6 /* CongTy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongTy.swift; sourceTree = "<group>"; };
+		18E2A2FF22620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CELLS_Trang_Chu_TableViewCell.swift; sourceTree = "<group>"; };
 		18FCDE33226090A7008A8552 /* ha2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ha2-Bridging-Header.h"; sourceTree = "<group>"; };
 		18FCDE34226090A8008A8552 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		18FCDE35226090A8008A8552 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				18A516AD226030BD0003F2E8 /* TrangChu_ViewController.swift */,
 				18FCDE372260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift */,
 				18DEF3802260B7470058DB80 /* MH_Trang_Chu_ViewController.swift */,
+				18E2A2FF22620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			children = (
 				18DEF3822260CC400058DB80 /* User.swift */,
 				18FD89522261722F000353B7 /* extension_function.swift */,
+				18E2A2FD22620018007638F6 /* CongTy.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -277,11 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				18FCDE382260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift in Sources */,
+				18E2A2FE22620018007638F6 /* CongTy.swift in Sources */,
 				18219F51225F5229006F2A0D /* DangKy_ViewController.swift in Sources */,
 				1845AE66225EE09E004C0B8E /* ViewController.swift in Sources */,
 				18DEF3812260B7470058DB80 /* MH_Trang_Chu_ViewController.swift in Sources */,
 				18DEF3832260CC400058DB80 /* User.swift in Sources */,
 				18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */,
+				18E2A30022620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift in Sources */,
 				18A516AE226030BD0003F2E8 /* TrangChu_ViewController.swift in Sources */,
 				1845AE64225EE09E004C0B8E /* AppDelegate.swift in Sources */,
 				18FD89532261722F000353B7 /* extension_function.swift in Sources */,

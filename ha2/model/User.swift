@@ -12,19 +12,19 @@ import UIKit
 struct User {
     let id:String!
     let email:String!
-    let pass:String!
+    var Avatar:UIImage!
     
     init()
     {
         id = ""
         email = ""
-        pass = ""
+        Avatar = UIImage(named: "person")
     }
     
-    init(id:String,email:String,pass:String) {
+    init(id:String,email:String) {
         self.id = id
         self.email = email
-        self.pass = pass
+        self.Avatar = UIImage(named: "person")
     }
     
 }

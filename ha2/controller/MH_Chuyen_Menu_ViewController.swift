@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 
+// dua du lieu vao hco user
+var currenUser:User!
+
 class MH_Chuyen_Menu_ViewController:  UIViewController, UITableViewDataSource,UITableViewDelegate{
 
     
@@ -20,6 +23,9 @@ class MH_Chuyen_Menu_ViewController:  UIViewController, UITableViewDataSource,UI
         super.viewDidLoad()
         table_menu.delegate = self
         table_menu.dataSource = self
+
+        
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
