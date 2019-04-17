@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1804A2392266341600A8F0B8 /* MH_ChiTiet_CongTy_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804A2382266341600A8F0B8 /* MH_ChiTiet_CongTy_ViewController.swift */; };
 		18219F51225F5229006F2A0D /* DangKy_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18219F50225F5229006F2A0D /* DangKy_ViewController.swift */; };
 		1845AE64225EE09E004C0B8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1845AE63225EE09E004C0B8E /* AppDelegate.swift */; };
 		1845AE66225EE09E004C0B8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1845AE65225EE09E004C0B8E /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1804A2382266341600A8F0B8 /* MH_ChiTiet_CongTy_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH_ChiTiet_CongTy_ViewController.swift; sourceTree = "<group>"; };
 		18219F50225F5229006F2A0D /* DangKy_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangKy_ViewController.swift; sourceTree = "<group>"; };
 		1845AE60225EE09E004C0B8E /* ha2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ha2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1845AE63225EE09E004C0B8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				18FCDE372260958C008A8552 /* MH_Chuyen_Menu_ViewController.swift */,
 				18DEF3802260B7470058DB80 /* MH_Trang_Chu_ViewController.swift */,
 				18E2A2FF22620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift */,
+				1804A2382266341600A8F0B8 /* MH_ChiTiet_CongTy_ViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				18DEF3832260CC400058DB80 /* User.swift in Sources */,
 				18FCDE36226090A9008A8552 /* SWRevealViewController.m in Sources */,
 				18E2A30022620EF2007638F6 /* CELLS_Trang_Chu_TableViewCell.swift in Sources */,
+				1804A2392266341600A8F0B8 /* MH_ChiTiet_CongTy_ViewController.swift in Sources */,
 				18A516AE226030BD0003F2E8 /* TrangChu_ViewController.swift in Sources */,
 				1845AE64225EE09E004C0B8E /* AppDelegate.swift in Sources */,
 				18FD89532261722F000353B7 /* extension_function.swift in Sources */,

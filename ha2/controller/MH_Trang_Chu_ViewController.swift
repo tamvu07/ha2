@@ -7,7 +7,7 @@
 //
 
 import UIKit
-var vistor:User!
+var vistor:CongTy!
 var User_flag:Int!
 var User_name:String!
 import Firebase
@@ -37,17 +37,28 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
         let tablename = ref.child("cong ty ung tuyen")
         let congtys = tablename.child("cong ty A")
         // khoi tao 1 user de up len fire base
-        let ct:Dictionary<String,String> = ["ten cong ty":"abc",
+        let ct:Dictionary<String,String> = ["ten cong ty":"phat dat",
                                             "cong viec":"ke toan",
-                                            "dia chi":"123"
+                                            "dia chi":"123/123 duong so 2",
+                                            "avatar":"https://newimageasia.vn/image/catalog/newimage/Home3-091.png",
+                                            "luong":"1000 $",
+                                            "motacongviec":"làm việc toàn thời gian, độ tuổi: lớn hơn 17 nhỏ hơn 31, siêng năng, có tinh thần học hỏi, biết tiếng anh. ",
+                                            "email":"phatdai@gmail.com",
+                                            "sdt":"0956211155"
+            
         ]
         congtys.setValue(ct)
         
         let congtysB = tablename.child("cong ty B")
         // khoi tao 1 user de up len fire base
-        let ctB:Dictionary<String,String> = ["ten cong ty":"B",
+        let ctB:Dictionary<String,String> = ["ten cong ty":"truog hai",
                                             "cong viec":"ke toan",
-                                            "dia chi":"1"
+                                            "dia chi":"1/2 duong so 1",
+                                            "avatar":"https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.0-9/49424615_374588286641970_1855015251523665920_n.jpg?_nc_cat=100&_nc_oc=AQkVQwvCyBIme9V1mqrct4mwDXwIZ_wBwoFiX2-21ykgaO1ORQTflMbEwUJbyKGdsLs&_nc_ht=scontent.fsgn4-1.fna&oh=b053cde6d755ebb08cc97244ade4e0d7&oe=5D3CFCD1",
+                                            "luong":"2000 $",
+                                            "motacongviec":"làm việc toàn thời gian, độ tuổi: lớn hơn 17 nhỏ hơn 31, siêng năng, có tinh thần học hỏi, biết tiếng anh. ",
+                                            "email":"thotruong@gmail.com",
+                                            "sdt":"0629997541"
         ]
         congtysB.setValue(ctB)
        
@@ -60,7 +71,14 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
                 let tencongty:String = (postDict?["ten cong ty"])! as! String
                 let congviec:String = (postDict?["cong viec"])! as! String
                 let diachi:String = (postDict?["dia chi"])! as! String
-                let congty:CongTy =  CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi)
+                let avatar:String = (postDict?["avatar"])! as! String
+                let luong:String = (postDict?["luong"])! as! String
+                let motacongviec:String = (postDict?["motacongviec"])! as! String
+                let email:String = (postDict?["email"])! as! String
+                let sdt:String = (postDict?["sdt"])! as! String
+                
+//                let congty:CongTy =  CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi,
+                let congty:CongTy = CongTy(idCT: snapshot.key, tencongty: tencongty, congviec: congviec, diachi: diachi, avatar: avatar, luong: luong, motacongviec: motacongviec, email: email, sdt: sdt)
                 self.array_congty.append(congty)
                 print("........>>>>>>>>>>>>\(self.array_congty.count).................")
                  self.tb_List_CongTy.reloadData()
@@ -87,15 +105,30 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
         cell.lb1.text = array_congty[indexPath.row].tencongty
         cell.lb2.text = array_congty[indexPath.row].diachi
         cell.lb3.text = array_congty[indexPath.row].congviec
-        
-        let url:URL = URL(string: "https://www.aeonmall-vietnam.com/wp-content/uploads/2017/01/IMG_0629-2.jpg")!
-        
-       cell.Avatar.image = UIImage(data: data)
+        let avatar = array_congty[indexPath.row].avatar
+        let url:URL = URL(string: avatar!)!
+        do
+        {
+            let dulieu:Data = try Data(contentsOf: url)
+            cell.Avatar.image = UIImage(data: dulieu)
+        }
+        catch
+        {
+            print("khong lay dc du lieu !")
+        }
+       
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // lay vi tri dong duoc chon
+        vistor = array_congty[indexPath.row]
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_ChiTietCongTy")
+        navigationController?.pushViewController(scr!, animated: true)
     }
     
 }
