@@ -12,4 +12,6 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Database'
 pod 'SwiftLint', '~> 0.27'
+pod 'DLRadioButton','~> 1.4'
+pod 'CodableFirebase'
 end

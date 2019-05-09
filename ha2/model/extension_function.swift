@@ -24,9 +24,6 @@ class chucnang{
             print ("Error signing out: %@", signOutError)
         }
     }
-
-
-
     
 }
 

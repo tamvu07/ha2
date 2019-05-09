@@ -10,9 +10,14 @@ import UIKit
 var vistor:CongTy!
 var User_flag:Int!
 var User_name:String!
+var currenUser:User!
 import Firebase
+var Search_1_flag:Int!
 // tao lien ket voi database
 var ref = Database.database().reference()
+let storage = Storage.storage()
+let storageRef = storage.reference(forURL: "gs://authileha2.appspot.com")
+var nguoidung:Int!
 
 class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
 
@@ -38,7 +43,7 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
         let congtys = tablename.child("cong ty A")
         // khoi tao 1 user de up len fire base
         let ct:Dictionary<String,String> = ["ten cong ty":"phat dat",
-                                            "cong viec":"ke toan",
+                                            "cong viec":"công nghệ thực phẩm",
                                             "dia chi":"123/123 duong so 2",
                                             "avatar":"https://newimageasia.vn/image/catalog/newimage/Home3-091.png",
                                             "luong":"1000 $",
@@ -52,7 +57,7 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
         let congtysB = tablename.child("cong ty B")
         // khoi tao 1 user de up len fire base
         let ctB:Dictionary<String,String> = ["ten cong ty":"truog hai",
-                                            "cong viec":"ke toan",
+                                            "cong viec":"kỹ thuật dệt",
                                             "dia chi":"1/2 duong so 1",
                                             "avatar":"https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.0-9/49424615_374588286641970_1855015251523665920_n.jpg?_nc_cat=100&_nc_oc=AQkVQwvCyBIme9V1mqrct4mwDXwIZ_wBwoFiX2-21ykgaO1ORQTflMbEwUJbyKGdsLs&_nc_ht=scontent.fsgn4-1.fna&oh=b053cde6d755ebb08cc97244ade4e0d7&oe=5D3CFCD1",
                                             "luong":"2000 $",
@@ -62,6 +67,19 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
         ]
         congtysB.setValue(ctB)
        
+        let congtysC = tablename.child("cong ty c")
+        // khoi tao 1 user de up len fire base
+        let ctC:Dictionary<String,String> = ["ten cong ty":"Thịnh Hải",
+                                             "cong viec":"Công nghệ chế biến lâm sản",
+                                             "dia chi":"1/7 duong so 1",
+                                             "avatar":"https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.0-9/49424615_374588286641970_1855015251523665920_n.jpg?_nc_cat=100&_nc_oc=AQkVQwvCyBIme9V1mqrct4mwDXwIZ_wBwoFiX2-21ykgaO1ORQTflMbEwUJbyKGdsLs&_nc_ht=scontent.fsgn4-1.fna&oh=b053cde6d755ebb08cc97244ade4e0d7&oe=5D3CFCD1",
+                                             "luong":"2000 $",
+                                             "motacongviec":"làm việc toàn thời gian, độ tuổi: lớn hơn 17 nhỏ hơn 31, siêng năng, có tinh thần học hỏi, biết tiếng anh. ",
+                                             "email":"thinhhai@gmail.com",
+                                             "sdt":"0629997541"
+        ]
+        congtysC.setValue(ctC)
+        
         tablename.observe(.childAdded, with: { (snapshot) in
             // lay du lieu luu vao postDict
             let postDict = snapshot.value as? [String: AnyObject]
@@ -88,6 +106,12 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
         
     }
 
+    @IBAction func bt_Item_chunang(_ sender: Any) {
+        self.chuyen_MH_chucnang()
+    }
+    
+    
+    
     // lam viec voi table view
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -129,6 +153,12 @@ class MH_Trang_Chu_ViewController: UIViewController, UITableViewDelegate,UITable
         vistor = array_congty[indexPath.row]
         let scr = storyboard?.instantiateViewController(withIdentifier: "MH_ChiTietCongTy")
         navigationController?.pushViewController(scr!, animated: true)
+    }
+    
+    func chuyen_MH_chucnang() {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_chucnang")
+        navigationController?.pushViewController(scr!, animated: true)
+       
     }
     
 }

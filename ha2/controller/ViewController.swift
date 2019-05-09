@@ -43,10 +43,50 @@ class ViewController: UIViewController {
            Auth.auth().signIn(withEmail: txt_email.text!, password: txt_pass.text!) { [weak self] user, error in
             if(error == nil)
             {
-//                print("....... dang nhap thanh cong ............")
-                 User_flag = 1
-                User_name = self!.txt_email.text
-                self!.goto_MH_chucnang()
+                                                    print("....... dang nhap thanh cong ............")
+                let user = Auth.auth().currentUser
+                let avatar: String = user?.photoURL?.absoluteString ?? ""
+                currenUser = User.init(id: (user?.uid)!, email: (user?.email)!, linkAvatar: avatar)
+                var KT = "Ungvien"
+                
+                // ref.child de truy van table trong database , lay ra ID current USER hien tai
+                var tablename = ref.child("Nguoidung").child("\(KT)")
+                // Listen for new comments in the Firebase database
+                tablename.observe(.childAdded, with: { (snapshot) in
+                    // nếu lấy được dữ liệu postDict từ sever về và id của user có trong postDict
+                    if let postDict = snapshot.value as? [String : AnyObject], currenUser.id == snapshot.key
+                    {
+                        let User_current = (postDict["Thongtincanhan"]) as! NSMutableDictionary
+                        let email:String = (User_current["Email"])! as? String ?? "000@gmail.com"
+                        let linkAvatar:String = (User_current["LinkAvatar"])! as? String ?? "000"
+                        let user:User = User(id: snapshot.key, email: email, linkAvatar: linkAvatar)
+                        currenUser = user
+                            print("---------------- Chuyen man hinh ung vien ---------------")
+                                         User_flag = 1
+                                        User_name = currenUser.email
+                                        self!.goto_MH_chucnang()
+                    }
+                    else {
+                        print("KHONG CO POSTDICT HOAC ID USER KHONG CO TRONG TABLE USER1")
+                        
+                        KT = "Congty"
+                        tablename = ref.child("User").child("\(KT)")
+                        if let postDict = snapshot.value as? [String : AnyObject], currenUser.id == snapshot.key
+                        {
+                            print("---------------- Chuyen man hinh congty ---------------")
+                            User_flag = 1
+                            User_name = currenUser.email
+//                            self!.goto_MH_chucnang()
+                        }
+                        else{
+                            print("........tim khong thay ai !...............\n")
+                        }
+                    }
+                })
+                
+                
+                
+                
             }
             else
             {

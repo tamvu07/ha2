@@ -9,9 +9,6 @@
 import UIKit
 import Firebase
 
-// dua du lieu vao hco user
-var currenUser:User!
-
 class MH_Chuyen_Menu_ViewController:  UIViewController, UITableViewDataSource,UITableViewDelegate{
 
     
@@ -23,10 +20,26 @@ class MH_Chuyen_Menu_ViewController:  UIViewController, UITableViewDataSource,UI
         super.viewDidLoad()
         table_menu.delegate = self
         table_menu.dataSource = self
-
-        
+    }
+    
+    @IBAction func bt_Search(_ sender: Any) {
+        if(User_flag == 1)
+        {
+            self.goto_MH_MH_Search_01()
+        }else{
+            let alert  = UIAlertController(title: "Thông báo", message: " Xin đăng nhập trước !", preferredStyle: .alert)
+            let btn_ok:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(btn_ok)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    @IBAction func bt_X_thoat(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: false)
         
     }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -66,7 +79,7 @@ class MH_Chuyen_Menu_ViewController:  UIViewController, UITableViewDataSource,UI
             {
                // dang xuat
                 f.dangxuat()
-                self.goto_MH_trangchu()
+                self.navigationController?.popToRootViewController(animated: false)
             }
             else if(User_flag != 1)
             {
@@ -100,10 +113,17 @@ class MH_Chuyen_Menu_ViewController:  UIViewController, UITableViewDataSource,UI
         navigationController?.pushViewController(scr!, animated: true)
     }
     
-    func goto_MH_trangchu()
+    
+    func goto_MH_MH_Search_01()
     {
-        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_trangchu")
-        self.present(scr!, animated: true, completion: nil)
+        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_Search_01")
+        navigationController?.pushViewController(scr!, animated: true)
     }
+    
+//    func goto_MH_trangchu()
+//    {
+//        let scr = storyboard?.instantiateViewController(withIdentifier: "MH_trangchu")
+//        self.present(scr!, animated: true, completion: nil)
+//    }
     
 }

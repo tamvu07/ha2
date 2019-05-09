@@ -1,4 +1,6 @@
 PODS:
+  - CodableFirebase (0.2.1)
+  - DLRadioButton (1.4.12)
   - Firebase/Auth (5.20.2):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.4.2)
@@ -77,6 +79,8 @@ PODS:
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
+  - CodableFirebase
+  - DLRadioButton (~> 1.4)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -85,6 +89,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - CodableFirebase
+    - DLRadioButton
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -101,6 +107,8 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
   FirebaseAnalytics: ece1aa57a4f43c64d53a648b5a5e05151aae947b
   FirebaseAuth: dd7bbf03a5aee0eafb3a1aee4d2812bd74bac890
@@ -116,6 +124,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 1cde6b77cbc960f55a179609896d266a5c0cbcbe
+PODFILE CHECKSUM: 674c292a06ee68d2acf66ef0aabf8ba02517f882
 
 COCOAPODS: 1.6.1
